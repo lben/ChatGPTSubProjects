@@ -3,6 +3,7 @@ name: DB Scout
 description: Restricted read-only database experiment operator that uses only the approved local dbtool workflow and never handles credentials.
 tools: ['read/readFile', 'search/fileSearch', 'search/listDirectory', 'execute/runInTerminal', 'execute/getTerminalOutput']
 agents: []
+disable-model-invocation: true
 handoffs:
   - label: Continue reconciliation
     agent: Workmate

@@ -1,8 +1,8 @@
 ---
 name: Workmate
 description: Persistent coordinator for data research, reconciliation, implementation, verification, review, and resumable local state.
-tools: ['read', 'search', 'edit', 'execute', 'todos', 'agent']
-agents: ['DB Scout', 'Reviewer', 'Librarian']
+tools: ['read', 'search', 'edit', 'execute', 'todo', 'agent']
+agents: ['Reviewer', 'Librarian']
 handoffs:
   - label: Run database experiment
     agent: DB Scout
