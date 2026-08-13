@@ -1,0 +1,47 @@
+# Private DBResearch runtime state
+.agent/local/
+.agent/WORKSTYLE.local.md
+
+# Company data and generated results
+data/
+input/
+inputs/
+output/
+outputs/
+results/
+work/
+*.csv
+*.tsv
+*.xlsx
+*.xls
+*.xlsm
+*.parquet
+*.feather
+*.avro
+*.orc
+*.sav
+*.pkl
+*.pickle
+*.db
+*.sqlite
+*.sqlite3
+*.duckdb
+
+# Credentials and local configuration
+.env
+.env.*
+*.pem
+*.key
+*.pfx
+*.p12
+credentials.*
+secrets.*
+
+# Python and editors
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.DS_Store
+Thumbs.db

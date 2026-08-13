@@ -1,0 +1,9 @@
+{
+  "transport": "rest",
+  "base_url": "http://127.0.0.1:8765",
+  "health_path": "/health",
+  "query_path": "/v1/query",
+  "timeout_seconds": 60,
+  "max_request_bytes": 1000000,
+  "max_result_bytes": 5000000
+}

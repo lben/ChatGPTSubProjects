@@ -1,0 +1,114 @@
+{
+  "memory_max_chars": 6000,
+  "required_paths": [
+    "AGENTS.md",
+    "SECURITY.md",
+    ".github/copilot-instructions.md",
+    ".github/agents/workmate.agent.md",
+    ".github/agents/db-scout.agent.md",
+    ".github/agents/reviewer.agent.md",
+    ".github/agents/librarian.agent.md",
+    ".github/skills/task-cycle/SKILL.md",
+    ".github/skills/minimal-correct-code/SKILL.md",
+    ".github/skills/verify-change/SKILL.md",
+    ".github/skills/refine-experience/SKILL.md",
+    ".github/skills/reconcile-data/SKILL.md",
+    ".github/skills/run-db-query/SKILL.md",
+    ".agent/TOOLBOX.md",
+    ".agent/DB_TOOL_CONTRACT.md",
+    ".agent/templates/ACTIVE_TASK.md",
+    ".agent/templates/MEMORY.md",
+    ".agent/templates/DECISIONS.md",
+    ".agent/templates/RECONCILIATION.md",
+    ".agent/templates/WORKSTYLE.md",
+    ".agent/templates/LOCAL_TOOLING.example.json",
+    "tools/agentlib.py",
+    "tools/agentctl.py",
+    "tools/dbtool.py",
+    "tools/safety_scan.py",
+    ".vscode/tasks.json"
+  ],
+  "active_task_required_headings": [
+    "Core goal",
+    "Done when",
+    "Non-goals",
+    "Real proof",
+    "Current milestone",
+    "Next action",
+    "Result",
+    "Evidence",
+    "Learnings",
+    "Blockers"
+  ],
+  "verification": {
+    "fast": [
+      {
+        "name": "Compile harness tools",
+        "argv": [
+          "{python}",
+          "-m",
+          "py_compile",
+          "tools/agentlib.py",
+          "tools/agentctl.py",
+          "tools/dbtool.py",
+          "tools/safety_scan.py"
+        ],
+        "cwd": ".",
+        "timeout_seconds": 60
+      },
+      {
+        "name": "Harness unit tests",
+        "argv": [
+          "{python}",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "tools/tests",
+          "-q"
+        ],
+        "cwd": ".",
+        "timeout_seconds": 120
+      }
+    ],
+    "full": [
+      {
+        "name": "Compile harness tools",
+        "argv": [
+          "{python}",
+          "-m",
+          "py_compile",
+          "tools/agentlib.py",
+          "tools/agentctl.py",
+          "tools/dbtool.py",
+          "tools/safety_scan.py"
+        ],
+        "cwd": ".",
+        "timeout_seconds": 60
+      },
+      {
+        "name": "Harness unit tests",
+        "argv": [
+          "{python}",
+          "-m",
+          "unittest",
+          "discover",
+          "-s",
+          "tools/tests",
+          "-q"
+        ],
+        "cwd": ".",
+        "timeout_seconds": 120
+      },
+      {
+        "name": "Sensitive-content scan",
+        "argv": [
+          "{python}",
+          "tools/safety_scan.py"
+        ],
+        "cwd": ".",
+        "timeout_seconds": 120
+      }
+    ]
+  }
+}

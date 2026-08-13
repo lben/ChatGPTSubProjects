@@ -1,0 +1,84 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Harness: Initialize",
+      "type": "shell",
+      "command": "${workspaceFolder}/tools/agentctl.sh",
+      "args": ["init"],
+      "windows": {
+        "command": "${workspaceFolder}\\tools\\agentctl.cmd",
+        "args": ["init"]
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Harness: Doctor",
+      "type": "shell",
+      "command": "${workspaceFolder}/tools/agentctl.sh",
+      "args": ["doctor"],
+      "windows": {
+        "command": "${workspaceFolder}\\tools\\agentctl.cmd",
+        "args": ["doctor"]
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Harness: Status",
+      "type": "shell",
+      "command": "${workspaceFolder}/tools/agentctl.sh",
+      "args": ["status"],
+      "windows": {
+        "command": "${workspaceFolder}\\tools\\agentctl.cmd",
+        "args": ["status"]
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Harness: Validate",
+      "type": "shell",
+      "command": "${workspaceFolder}/tools/agentctl.sh",
+      "args": ["validate"],
+      "windows": {
+        "command": "${workspaceFolder}\\tools\\agentctl.cmd",
+        "args": ["validate"]
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Harness: Verify Fast",
+      "type": "shell",
+      "command": "${workspaceFolder}/tools/agentctl.sh",
+      "args": ["verify", "fast"],
+      "windows": {
+        "command": "${workspaceFolder}\\tools\\agentctl.cmd",
+        "args": ["verify", "fast"]
+      },
+      "problemMatcher": [],
+      "group": "test"
+    },
+    {
+      "label": "Harness: Verify Full",
+      "type": "shell",
+      "command": "${workspaceFolder}/tools/agentctl.sh",
+      "args": ["verify", "full"],
+      "windows": {
+        "command": "${workspaceFolder}\\tools\\agentctl.cmd",
+        "args": ["verify", "full"]
+      },
+      "problemMatcher": [],
+      "group": {"kind": "test", "isDefault": true}
+    },
+    {
+      "label": "DB Tool: Doctor",
+      "type": "shell",
+      "command": "${workspaceFolder}/tools/dbtool.sh",
+      "args": ["doctor"],
+      "windows": {
+        "command": "${workspaceFolder}\\tools\\dbtool.cmd",
+        "args": ["doctor"]
+      },
+      "problemMatcher": []
+    }
+  ]
+}
